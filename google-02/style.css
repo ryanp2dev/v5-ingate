@@ -1,0 +1,99 @@
+:root {
+    --color-text:rgb(182,185,191);
+}
+
+
+body {
+    margin: 0;
+    background-color: rgb(30,30,30);
+    color: var(--color-text)
+
+}
+
+.root{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.header,.body,.footer{
+    border: 1px solid green;
+}
+
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    padding: 0.7rem;
+}
+
+.header a {
+    text-decoration: none;
+    margin:0 0.5rem;
+    color: var(--color-text)
+}
+
+.header a:hover {
+    text-decoration: underline;
+}
+
+.header-left, .header-rigth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.avatar {
+    height: 30px;
+    width: 30px;
+    background-color: aquamarine;
+    border-radius: 50%;
+}
+
+.body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    padding-top: 3rem;
+    align-items: center;
+}
+
+.body-search {
+    min-width: 400px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid grey;
+    padding: 0.6rem;
+}
+
+
+
+.body-text {
+    background-color: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    outline: none;
+}
+
+.body-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.body-btn button {
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(42,42,46);
+    color: var(--color-text);
+    margin: 0.5rem 0.1rem;
+    padding: 0.5rem 0.8rem;
+}

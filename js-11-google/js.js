@@ -2,11 +2,39 @@ const App = {
     init(){
         console.log("Start")
         this.controller.createLayout()
-        // this.controller.setStyle()
+        this.controller.setStyle()
+        this.controller.createEvents()
         console.log("Stop")
     },
     state:{},
     controller:{
+        createEvents(){
+            const els = App.elements
+            els.header.gmail.onmousemove = () => {
+                this.setStyle(els.header.gmail,{
+                    textDecoration:"underline"
+                })
+
+            }
+            els.header.gmail.onmouseout = () => {
+               this.setStyle(els.header.gmail,{
+                textDecoration:"none"
+               })
+              }
+
+              els.header.imagem.onmousemove = () => {
+                this.setStyle(els.header.imagem,{
+                    textDecoration:"underline"
+                })
+
+            }
+            els.header.imagem.onmouseout = () => {
+               this.setStyle(els.header.imagem,{
+                textDecoration:"none"
+               })
+              }
+        },
+
         createHeader(){
             const els = App.elements.header
             els.gmail.innerHTML="Gmail"
@@ -17,6 +45,10 @@ const App = {
 
             els.dots.alt="dots"
             els.dots.src="https://cdn-icons-png.flaticon.com/512/17/17704.png"
+
+            this.setStyle(els.dots,{
+                backgroundColor:"white"
+            })
 
             
             this.setStyle(els.gmail,{
@@ -62,7 +94,9 @@ const App = {
             els.google.imgGoogle.alt="google"
             els.google.imgGoogle.src="https://www.google.com.br/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
 
-            
+            this.setStyle(els.google.imgGoogle,{
+                backgroundColor:"white"
+            })
             this.setStyle(els.google.container,{
                 marginTop: "80px"
             })
@@ -98,7 +132,8 @@ const App = {
             this.setStyle(els.search.searchIcon,{
                 width:"24px",
                 height: "24px",
-                marginLeft:"10px"
+                marginLeft:"10px",
+                backgroundColor: "white"
             })
             els.search.searchIcon.src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png"
 
@@ -108,6 +143,7 @@ const App = {
                 width:"auto",
                 height: "24px",
                 marginRight: "10px",
+                backgroundColor: "white"
                 
 
             })
@@ -327,7 +363,6 @@ const els = App.elements
         width: "100vw",
         height: "100vh",
         backgroundColor: "#FFFFFF"
-
     })
     this.createHeader()
     els.container.appendChild(els.header.container)

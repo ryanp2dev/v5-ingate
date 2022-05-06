@@ -1,1 +1,42 @@
-<h1>titulo</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>login</h1>
+    <div>
+        <label for="username">Name</label>
+        <input type="text" name="" id="username">
+    </div>
+
+    <div style="margin-top: 10px;">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="password">
+        <span id="showWide" onclick="toggleVisibility()">Show</span>
+    </div>
+
+    <script>
+        let isVisible = false
+        function toggleVisibility(){
+            const input = document.getElementById("password")
+            const showWide = document.getElementById("showWide")
+            console.log("hey",isVisible,input.type)
+
+            if(isVisible){
+                isVisible=false
+                input.type= "password"
+                showWide.innerHTML="Show"
+
+            }else{
+                isVisible=true
+                input.type= "text"
+                showWide.innerHTML="Wide"
+            }
+        }
+    </script>
+</body>
+</html>
